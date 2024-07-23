@@ -40,39 +40,47 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
+            this.lblMsgTitle = new System.Windows.Forms.Label();
             this.pnlFrequency.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBxDescription
             // 
-            this.txtBxDescription.Location = new System.Drawing.Point(46, 44);
+            this.txtBxDescription.Location = new System.Drawing.Point(34, 36);
+            this.txtBxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtBxDescription.Name = "txtBxDescription";
-            this.txtBxDescription.Size = new System.Drawing.Size(205, 22);
+            this.txtBxDescription.Size = new System.Drawing.Size(155, 20);
             this.txtBxDescription.TabIndex = 0;
+            this.txtBxDescription.TextChanged += new System.EventHandler(this.EnableAddButton);
             // 
             // txtBxAmount
             // 
-            this.txtBxAmount.Location = new System.Drawing.Point(46, 99);
+            this.txtBxAmount.Location = new System.Drawing.Point(34, 80);
+            this.txtBxAmount.Margin = new System.Windows.Forms.Padding(2);
             this.txtBxAmount.Name = "txtBxAmount";
-            this.txtBxAmount.Size = new System.Drawing.Size(205, 22);
+            this.txtBxAmount.Size = new System.Drawing.Size(155, 20);
             this.txtBxAmount.TabIndex = 1;
+            this.txtBxAmount.TextChanged += new System.EventHandler(this.EnableAddButton);
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(43, 25);
+            this.lblDescription.Location = new System.Drawing.Point(32, 20);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(75, 16);
+            this.lblDescription.Size = new System.Drawing.Size(60, 13);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Description";
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(43, 80);
+            this.lblAmount.Location = new System.Drawing.Point(32, 65);
+            this.lblAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(52, 16);
+            this.lblAmount.Size = new System.Drawing.Size(43, 13);
             this.lblAmount.TabIndex = 3;
             this.lblAmount.Text = "Amount";
             // 
@@ -81,17 +89,19 @@
             this.pnlFrequency.Controls.Add(this.rBtnMonthly);
             this.pnlFrequency.Controls.Add(this.rBtnWeekly);
             this.pnlFrequency.Controls.Add(this.rBtnOneTime);
-            this.pnlFrequency.Location = new System.Drawing.Point(46, 156);
+            this.pnlFrequency.Location = new System.Drawing.Point(34, 127);
+            this.pnlFrequency.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFrequency.Name = "pnlFrequency";
-            this.pnlFrequency.Size = new System.Drawing.Size(205, 100);
+            this.pnlFrequency.Size = new System.Drawing.Size(154, 81);
             this.pnlFrequency.TabIndex = 4;
             // 
             // rBtnMonthly
             // 
             this.rBtnMonthly.AutoSize = true;
-            this.rBtnMonthly.Location = new System.Drawing.Point(35, 67);
+            this.rBtnMonthly.Location = new System.Drawing.Point(26, 54);
+            this.rBtnMonthly.Margin = new System.Windows.Forms.Padding(2);
             this.rBtnMonthly.Name = "rBtnMonthly";
-            this.rBtnMonthly.Size = new System.Drawing.Size(74, 20);
+            this.rBtnMonthly.Size = new System.Drawing.Size(62, 17);
             this.rBtnMonthly.TabIndex = 2;
             this.rBtnMonthly.TabStop = true;
             this.rBtnMonthly.Text = "Monthly";
@@ -100,9 +110,10 @@
             // rBtnWeekly
             // 
             this.rBtnWeekly.AutoSize = true;
-            this.rBtnWeekly.Location = new System.Drawing.Point(35, 40);
+            this.rBtnWeekly.Location = new System.Drawing.Point(26, 32);
+            this.rBtnWeekly.Margin = new System.Windows.Forms.Padding(2);
             this.rBtnWeekly.Name = "rBtnWeekly";
-            this.rBtnWeekly.Size = new System.Drawing.Size(74, 20);
+            this.rBtnWeekly.Size = new System.Drawing.Size(61, 17);
             this.rBtnWeekly.TabIndex = 1;
             this.rBtnWeekly.TabStop = true;
             this.rBtnWeekly.Text = "Weekly";
@@ -111,9 +122,10 @@
             // rBtnOneTime
             // 
             this.rBtnOneTime.AutoSize = true;
-            this.rBtnOneTime.Location = new System.Drawing.Point(35, 14);
+            this.rBtnOneTime.Location = new System.Drawing.Point(26, 11);
+            this.rBtnOneTime.Margin = new System.Windows.Forms.Padding(2);
             this.rBtnOneTime.Name = "rBtnOneTime";
-            this.rBtnOneTime.Size = new System.Drawing.Size(87, 20);
+            this.rBtnOneTime.Size = new System.Drawing.Size(71, 17);
             this.rBtnOneTime.TabIndex = 0;
             this.rBtnOneTime.TabStop = true;
             this.rBtnOneTime.Text = "One Time";
@@ -122,27 +134,30 @@
             // lblFrequency
             // 
             this.lblFrequency.AutoSize = true;
-            this.lblFrequency.Location = new System.Drawing.Point(43, 137);
+            this.lblFrequency.Location = new System.Drawing.Point(32, 111);
+            this.lblFrequency.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFrequency.Name = "lblFrequency";
-            this.lblFrequency.Size = new System.Drawing.Size(71, 16);
+            this.lblFrequency.Size = new System.Drawing.Size(57, 13);
             this.lblFrequency.TabIndex = 5;
             this.lblFrequency.Text = "Frequency";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(536, 139);
+            this.btnAdd.Location = new System.Drawing.Point(402, 113);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 52);
+            this.btnAdd.Size = new System.Drawing.Size(94, 42);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add Debt";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_ClickAsync);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(536, 240);
+            this.btnBack.Location = new System.Drawing.Point(402, 195);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(125, 52);
+            this.btnBack.Size = new System.Drawing.Size(94, 42);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -156,19 +171,42 @@
             this.panel1.Controls.Add(this.pnlFrequency);
             this.panel1.Controls.Add(this.lblFrequency);
             this.panel1.Controls.Add(this.txtBxAmount);
-            this.panel1.Location = new System.Drawing.Point(90, 52);
+            this.panel1.Location = new System.Drawing.Point(68, 42);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 308);
+            this.panel1.Size = new System.Drawing.Size(270, 250);
             this.panel1.TabIndex = 8;
+            // 
+            // lblError
+            // 
+            this.lblError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblError.Location = new System.Drawing.Point(103, 326);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(409, 38);
+            this.lblError.TabIndex = 9;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblError.Visible = false;
+            // 
+            // lblMsgTitle
+            // 
+            this.lblMsgTitle.AutoSize = true;
+            this.lblMsgTitle.Location = new System.Drawing.Point(100, 313);
+            this.lblMsgTitle.Name = "lblMsgTitle";
+            this.lblMsgTitle.Size = new System.Drawing.Size(53, 13);
+            this.lblMsgTitle.TabIndex = 10;
+            this.lblMsgTitle.Text = "Message:";
             // 
             // AddDebtPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.lblMsgTitle);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddDebtPage";
             this.Text = "Add Debt";
             this.Load += new System.EventHandler(this.AddDebtPage_Load);
@@ -177,6 +215,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +233,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblMsgTitle;
     }
 }
