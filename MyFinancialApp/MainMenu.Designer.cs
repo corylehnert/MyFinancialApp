@@ -37,10 +37,10 @@
             // 
             // btnCreateReport
             // 
-            this.btnCreateReport.Location = new System.Drawing.Point(31, 84);
-            this.btnCreateReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateReport.Location = new System.Drawing.Point(31, 67);
+            this.btnCreateReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateReport.Name = "btnCreateReport";
-            this.btnCreateReport.Size = new System.Drawing.Size(88, 43);
+            this.btnCreateReport.Size = new System.Drawing.Size(88, 59);
             this.btnCreateReport.TabIndex = 1;
             this.btnCreateReport.Text = "Create Financial Report";
             this.btnCreateReport.UseVisualStyleBackColor = true;
@@ -49,7 +49,7 @@
             // btnAddDebt
             // 
             this.btnAddDebt.Location = new System.Drawing.Point(31, 20);
-            this.btnAddDebt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddDebt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDebt.Name = "btnAddDebt";
             this.btnAddDebt.Size = new System.Drawing.Size(88, 43);
             this.btnAddDebt.TabIndex = 2;
@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.btnCreateReport);
             this.panel1.Controls.Add(this.btnAddDebt);
             this.panel1.Location = new System.Drawing.Point(216, 111);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 145);
             this.panel1.TabIndex = 3;
@@ -85,7 +85,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainScreen";
             this.Text = "Main Menu";
             this.panel1.ResumeLayout(false);
