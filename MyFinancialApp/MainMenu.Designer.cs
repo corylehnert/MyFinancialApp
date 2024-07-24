@@ -37,7 +37,7 @@
             // 
             // btnCreateReport
             // 
-            this.btnCreateReport.Location = new System.Drawing.Point(31, 67);
+            this.btnCreateReport.Location = new System.Drawing.Point(38, 86);
             this.btnCreateReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(88, 59);
@@ -48,10 +48,10 @@
             // 
             // btnAddDebt
             // 
-            this.btnAddDebt.Location = new System.Drawing.Point(31, 20);
+            this.btnAddDebt.Location = new System.Drawing.Point(38, 21);
             this.btnAddDebt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDebt.Name = "btnAddDebt";
-            this.btnAddDebt.Size = new System.Drawing.Size(88, 43);
+            this.btnAddDebt.Size = new System.Drawing.Size(88, 61);
             this.btnAddDebt.TabIndex = 2;
             this.btnAddDebt.Text = "Add Debt";
             this.btnAddDebt.UseVisualStyleBackColor = true;
@@ -61,10 +61,10 @@
             // 
             this.panel1.Controls.Add(this.btnCreateReport);
             this.panel1.Controls.Add(this.btnAddDebt);
-            this.panel1.Location = new System.Drawing.Point(216, 111);
+            this.panel1.Location = new System.Drawing.Point(211, 112);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 145);
+            this.panel1.Size = new System.Drawing.Size(163, 163);
             this.panel1.TabIndex = 3;
             // 
             // lblTitle
