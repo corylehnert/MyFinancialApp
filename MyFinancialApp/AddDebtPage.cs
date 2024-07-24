@@ -54,11 +54,15 @@ namespace MyFinancialApp
             try
             {
                 var response = await client.PostAsync("AddDebt", requestContent);
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    lblMessage.Text = "Debt has been added to database.";
+                }
             }
             catch(Exception ex)
             {
-                lblError.Text = ex.Message;
-                lblError.Show();
+                lblMessage.Text = ex.Message;
+                lblMessage.Show();
             }
         }
 

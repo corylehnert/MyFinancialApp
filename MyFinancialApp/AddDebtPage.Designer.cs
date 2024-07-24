@@ -40,7 +40,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblError = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.lblMsgTitle = new System.Windows.Forms.Label();
             this.pnlFrequency.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -177,15 +177,15 @@
             this.panel1.Size = new System.Drawing.Size(270, 250);
             this.panel1.TabIndex = 8;
             // 
-            // lblError
+            // lblMessage
             // 
-            this.lblError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblError.Location = new System.Drawing.Point(103, 326);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(409, 38);
-            this.lblError.TabIndex = 9;
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblError.Visible = false;
+            this.lblMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMessage.Location = new System.Drawing.Point(103, 326);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(409, 38);
+            this.lblMessage.TabIndex = 9;
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMessage.Visible = false;
             // 
             // lblMsgTitle
             // 
@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.lblMsgTitle);
-            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label lblMsgTitle;
     }
 }
