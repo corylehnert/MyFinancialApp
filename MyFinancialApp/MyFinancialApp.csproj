@@ -66,6 +66,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateFinancialReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFinancialReport.Designer.cs">
+      <DependentUpon>CreateFinancialReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTOs\AddDebtRequest.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -94,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddDebtPage.resx">
       <DependentUpon>AddDebtPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateFinancialReport.resx">
+      <DependentUpon>CreateFinancialReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
