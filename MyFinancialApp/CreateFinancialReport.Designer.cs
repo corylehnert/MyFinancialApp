@@ -30,6 +30,10 @@
         {
             this.btnGenerate = new System.Windows.Forms.Button();
             this.listDebts = new System.Windows.Forms.ListView();
+            this.descHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.amtHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nextPayHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lastPayHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comBoxFrequency = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -37,9 +41,10 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(351, 393);
+            this.btnGenerate.Location = new System.Drawing.Point(468, 484);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(100, 28);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -47,13 +52,39 @@
             // 
             // listDebts
             // 
+            this.listDebts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.descHeader,
+            this.amtHeader,
+            this.nextPayHeader,
+            this.lastPayHeader});
+            listDebts.GridLines = true;
             this.listDebts.HideSelection = false;
-            this.listDebts.Location = new System.Drawing.Point(459, 53);
+            this.listDebts.Location = new System.Drawing.Point(612, 65);
+            this.listDebts.Margin = new System.Windows.Forms.Padding(4);
             this.listDebts.Name = "listDebts";
-            this.listDebts.Size = new System.Drawing.Size(264, 247);
+            this.listDebts.Size = new System.Drawing.Size(351, 303);
             this.listDebts.TabIndex = 1;
             this.listDebts.UseCompatibleStateImageBehavior = false;
+            this.listDebts.View = System.Windows.Forms.View.Details;
             this.listDebts.Visible = false;
+            // 
+            // descHeader
+            // 
+            this.descHeader.Text = "Description";
+            // 
+            // amtHeader
+            // 
+            this.amtHeader.Text = "Amount";
+            // 
+            // nextPayHeader
+            // 
+            this.nextPayHeader.Text = "Next Payment Due";
+            this.nextPayHeader.Width = 127;
+            // 
+            // lastPayHeader
+            // 
+            this.lastPayHeader.Text = "Last Payment Made";
+            this.lastPayHeader.Width = 134;
             // 
             // comBoxFrequency
             // 
@@ -62,27 +93,30 @@
             "Full Report",
             "Monthly Report",
             "Weekly Report"});
-            this.comBoxFrequency.Location = new System.Drawing.Point(323, 352);
+            this.comBoxFrequency.Location = new System.Drawing.Point(431, 433);
+            this.comBoxFrequency.Margin = new System.Windows.Forms.Padding(4);
             this.comBoxFrequency.Name = "comBoxFrequency";
-            this.comBoxFrequency.Size = new System.Drawing.Size(121, 21);
+            this.comBoxFrequency.Size = new System.Drawing.Size(160, 24);
             this.comBoxFrequency.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.listDebts);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(16, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(765, 334);
+            this.panel1.Size = new System.Drawing.Size(1020, 411);
             this.panel1.TabIndex = 3;
             // 
             // CreateFinancialReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comBoxFrequency);
             this.Controls.Add(this.btnGenerate);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateFinancialReport";
             this.Text = "Create Financial Report";
             this.panel1.ResumeLayout(false);
@@ -96,5 +130,9 @@
         private System.Windows.Forms.ListView listDebts;
         private System.Windows.Forms.ComboBox comBoxFrequency;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ColumnHeader descHeader;
+        private System.Windows.Forms.ColumnHeader amtHeader;
+        private System.Windows.Forms.ColumnHeader nextPayHeader;
+        private System.Windows.Forms.ColumnHeader lastPayHeader;
     }
 }
