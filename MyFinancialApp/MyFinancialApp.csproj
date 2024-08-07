@@ -84,7 +84,9 @@
     <Compile Include="CreateFinancialReport.Designer.cs">
       <DependentUpon>CreateFinancialReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTOs\AddDebtRequest.cs" />
+    <Compile Include="DTOs\Data\DebtEntry.cs" />
+    <Compile Include="DTOs\Requests\AddDebtRequest.cs" />
+    <Compile Include="DTOs\Responses\FinancialReportResponse.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,5 +133,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
