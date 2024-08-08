@@ -42,12 +42,6 @@ namespace MyFinancialApp
                 lblMessage.Show();
             }
             listDebts.Show();
-            //var listItem = new ListViewItem();
-            //listItem.Text = "80.00";
-            //listItem.SubItems.Add("Models");
-            //listItem.SubItems.Add("07/23/24");
-            //listItem.SubItems.Add("12/31/99");
-            //listDebts.Items.Add(listItem);
         }
 
         private async Task<FinancialReportResponse> RetrieveData(string reportPath)
