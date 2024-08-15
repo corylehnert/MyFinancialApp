@@ -27,7 +27,10 @@ namespace MyFinancialApp
 
         private void btnCreateReport_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Create Financial Report button clicked.");
+            this.Hide();
+            var createFinancialReport = new CreateFinancialReport();
+            createFinancialReport.ShowDialog();
+            this.Show();
         }
     }
 }
