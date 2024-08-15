@@ -44,6 +44,11 @@ namespace MyFinancialApp
             listDebts.Show();
         }
 
+        /// <summary>
+        /// Retreive data from database to be displayed
+        /// </summary>
+        /// <param name="reportPath">The path for API call</param>
+        /// <returns>Task</returns>
         private async Task<FinancialReportResponse> RetrieveData(string reportPath)
         {
             var responseData = new FinancialReportResponse();
@@ -67,6 +72,10 @@ namespace MyFinancialApp
             return responseData;
         }
 
+        /// <summary>
+        /// Turn combo box values into usable data
+        /// </summary>
+        /// <returns>Value of combo box data</returns>
         private string DetermineReportType()
         {
             var reportPath = "";

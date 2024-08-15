@@ -43,6 +43,11 @@ namespace MyFinancialApp
             rBtnOneTime.Checked = true;
         }
 
+        /// <summary>
+        /// Sends a request to API to add new Debt
+        /// </summary>
+        /// <param name="request">Request data for AddDebt path</param>
+        /// <returns>Task</returns>
         private async Task SendAddDebtRequest(AddDebtRequest request)
         {
             HttpClient client = new HttpClient();
@@ -66,6 +71,10 @@ namespace MyFinancialApp
             }
         }
 
+        /// <summary>
+        /// Converts checkbox values to usable data
+        /// </summary>
+        /// <returns>Frequency type if true; N/A if not found</returns>
         private string DetermineFrequency()
         {
             if (rBtnOneTime.Checked)
@@ -83,6 +92,11 @@ namespace MyFinancialApp
             return "N/A";
         }
 
+        /// <summary>
+        /// Determines when the Add button is enabled
+        /// </summary>
+        /// <param name="sender">Data on object that causes the event</param>
+        /// <param name="e">Event args</param>
         private void EnableAddButton(object sender, EventArgs e)
         {
             var isFrequencySet = rBtnMonthly.Checked || rBtnOneTime.Checked || rBtnWeekly.Checked;
@@ -99,6 +113,10 @@ namespace MyFinancialApp
             }
         }
 
+        /// <summary>
+        /// Determine next payment data based on frequency check box values
+        /// </summary>
+        /// <returns>date of next payment</returns>
         private DateTime DetermineNextPaymentDate()
         {
             DateTime nextPaymentDate = new DateTime();
