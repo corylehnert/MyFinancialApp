@@ -1,4 +1,5 @@
 ﻿using MyFinancialApp.DTOs;
+using MyFinancialApp.Presenters;
 using System;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -20,11 +21,11 @@ namespace MyFinancialApp
             
         }
 
-        private void btnAdd_ClickAsync(object sender, EventArgs e)
+        private async void btnAdd_ClickAsync(object sender, EventArgs e)
         {
             Console.WriteLine("This button will add newly created Debt entry to a local database.");
-            
 
+            AddDebtPresenter presenter = new AddDebtPresenter(new HttpClient());
             var request = new AddDebtRequest();
             request.Id = new Random().Next();
             request.Description = txtBxDescription.Text;
@@ -34,41 +35,25 @@ namespace MyFinancialApp
             request.Frequency = DetermineFrequency();
             request.NextPaymentDate = DetermineNextPaymentDate();
             request.Owner = "Owner";
-            var response = SendAddDebtRequest(request);
+            try
+            {
+                var response = await presenter.AddDebt(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    lblMessage.Text = "Debt has been added to database.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message;
+            }
+            
         }
 
         private void AddDebtPage_Load(object sender, EventArgs e)
         {
             btnAdd.Enabled = false;
             rBtnOneTime.Checked = true;
-        }
-
-        /// <summary>
-        /// Sends a request to API to add new Debt
-        /// </summary>
-        /// <param name="request">Request data for AddDebt path</param>
-        /// <returns>Task</returns>
-        private async Task SendAddDebtRequest(AddDebtRequest request)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            var requestContent = JsonContent.Create(request);
-
-            try
-            {
-                var response = await client.PostAsync("AddDebt", requestContent);
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    lblMessage.Text = "Debt has been added to database.";
-                }
-            }
-            catch(Exception ex)
-            {
-                lblMessage.Text = ex.Message;
-                lblMessage.Show();
-            }
         }
 
         /// <summary>

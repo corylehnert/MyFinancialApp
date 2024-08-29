@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFinancialApp", "MyFinancialApp\MyFinancialApp.csproj", "{7B1B52E6-1B5E-43DF-A568-6FDBBC7508F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2DC829E4-B422-4A8F-B27B-C20FCA8D638C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7B1B52E6-1B5E-43DF-A568-6FDBBC7508F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B1B52E6-1B5E-43DF-A568-6FDBBC7508F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B1B52E6-1B5E-43DF-A568-6FDBBC7508F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC829E4-B422-4A8F-B27B-C20FCA8D638C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC829E4-B422-4A8F-B27B-C20FCA8D638C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC829E4-B422-4A8F-B27B-C20FCA8D638C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC829E4-B422-4A8F-B27B-C20FCA8D638C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
