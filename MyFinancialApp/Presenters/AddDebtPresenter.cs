@@ -3,12 +3,14 @@ using System;
 using System.Net.Http.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace MyFinancialApp.Presenters
 {
     public class AddDebtPresenter
     {
         private static HttpClient _httpClient;
+        private Uri Uri = new Uri(ConfigurationManager.AppSettings["myFinanicalApi"]);
         public AddDebtPresenter(HttpClient client)
         {
             _httpClient = client;
@@ -25,7 +27,7 @@ namespace MyFinancialApp.Presenters
         /// <returns>Task</returns>
         private async Task<HttpResponseMessage> SendAddDebtRequest(AddDebtRequest request)
         {
-            _httpClient.BaseAddress = new Uri("");
+            _httpClient.BaseAddress = Uri;
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             var requestContent = JsonContent.Create(request);

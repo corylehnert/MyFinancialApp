@@ -12,11 +12,11 @@ namespace UnitTests.AddPageTests
         public async Task AddPagePresenter_WhenValidRequestPresented_ReturnsOkResponse()
         {
             // Arrange
-            var mockHttpHandler = new Mock<HttpMessageHandler>();
+            var mockHttpMessageHandler = new Mock<HttpMessageHandler>();
 
-            mockHttpHandler.Protected().Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsNull<CancellationToken>()).ReturnsAsync(new HttpResponseMessage { StatusCode = System.Net.HttpStatusCode.OK});
+            mockHttpMessageHandler.Protected().Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>()).ReturnsAsync(new HttpResponseMessage { StatusCode = System.Net.HttpStatusCode.OK });
 
-            var testPresenter = new AddDebtPresenter(new HttpClient(mockHttpHandler.Object));
+            var testPresenter = new AddDebtPresenter(new HttpClient(mockHttpMessageHandler.Object));
 
             // Act
             var response = await testPresenter.AddDebt(CreateFakeAddDebtRequest(1, "TestEntry", float.Parse("100.00"), "ONETIME", new DateTime(2000, 3, 1), new DateTime(2000, 1, 1), DateTime.MaxValue, "Test"));
