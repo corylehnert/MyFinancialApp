@@ -10,7 +10,6 @@ namespace MyFinancialApp.Presenters
     public class AddDebtPresenter
     {
         private static HttpClient _httpClient;
-        private Uri Uri = new Uri(ConfigurationManager.AppSettings["myFinanicalApi"]);
         public AddDebtPresenter(HttpClient client)
         {
             _httpClient = client;
@@ -27,7 +26,8 @@ namespace MyFinancialApp.Presenters
         /// <returns>Task</returns>
         private async Task<HttpResponseMessage> SendAddDebtRequest(AddDebtRequest request)
         {
-            _httpClient.BaseAddress = Uri;
+            string uriString = ConfigurationManager.AppSettings["api"];
+            _httpClient.BaseAddress = new Uri(uriString);
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             var requestContent = JsonContent.Create(request);

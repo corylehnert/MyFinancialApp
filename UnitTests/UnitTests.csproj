@@ -19,6 +19,7 @@
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.5.2" />
     <PackageReference Include="MSTest.TestFramework" Version="3.5.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0-preview.7.24405.7" />
   </ItemGroup>
 
@@ -30,4 +31,13 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="CopyAppConfig" AfterTargets="AfterBuild">
+    <Copy SourceFiles="app.config" DestinationFiles="$(OutDir)\testhost.x86.dll.config" />
+  </Target>
 </Project>

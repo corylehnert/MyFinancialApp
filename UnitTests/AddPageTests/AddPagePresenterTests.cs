@@ -2,6 +2,7 @@
 using Moq.Protected;
 using MyFinancialApp.DTOs;
 using MyFinancialApp.Presenters;
+using System.Configuration;
 
 namespace UnitTests.AddPageTests
 {
