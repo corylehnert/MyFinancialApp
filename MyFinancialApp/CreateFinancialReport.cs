@@ -10,19 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyFinancialApp.DTOs.Responses;
+using MyFinancialApp.Presenters;
 
 namespace MyFinancialApp
 {
     public partial class CreateFinancialReport : Form
     {
-        HttpClient client;
+        
         public CreateFinancialReport()
         {
             InitializeComponent();
-            client = new HttpClient();
-            client.BaseAddress = new Uri("");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         private void btnGenerate_ClickAsync(object sender, EventArgs args)
@@ -54,14 +51,18 @@ namespace MyFinancialApp
             var responseData = new FinancialReportResponse();
             try
             {
-                responseData = await client.GetFromJsonAsync<FinancialReportResponse>(reportPath, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true, IncludeFields = true });
-                foreach (var debtEntry in responseData.Debts)
+                using (var httpClient = new HttpClient())
                 {
-                    var item = new ListViewItem(debtEntry.Description);
-                    item.SubItems.Add(debtEntry.Amount.ToString());
-                    item.SubItems.Add(debtEntry.NextPaymentDate.ToShortDateString());
-                    item.SubItems.Add(debtEntry.LastPaymentDate.ToShortDateString());
-                    listDebts.Items.Add(item);
+                    var presenter = new FinancialReportPresenter(httpClient);
+                    responseData = await presenter.RetrieveDebtRecords(reportPath);
+                    foreach (var debtEntry in responseData.Debts)
+                    {
+                        var item = new ListViewItem(debtEntry.Description);
+                        item.SubItems.Add(debtEntry.Amount.ToString());
+                        item.SubItems.Add(debtEntry.NextPaymentDate.ToShortDateString());
+                        item.SubItems.Add(debtEntry.LastPaymentDate.ToShortDateString());
+                        listDebts.Items.Add(item);
+                    }
                 }
             }
             catch (Exception ex)
